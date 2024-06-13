@@ -31,46 +31,97 @@ import '../scss/styles.scss';
 
 // BUSQUEDA DE ELEMENTOS
 // DEL DOM CON SELECTORES
-const inputEntrada = document.getElementById('entrada');
-const botonEnviar = document.getElementById('send');
+// const inputEntrada = document.getElementById('entrada');
+// const botonEnviar = document.getElementById('send');
 
-// DECLARACION DE FUNCIONES
-function checarInputVacio(valor) {
-  const entradaInputNoVacia = valor !== '';
+// // DECLARACION DE FUNCIONES
+// function checarInputVacio(valor) {
+//   const entradaInputNoVacia = valor !== '';
 
-  if (entradaInputNoVacia) {
-    botonEnviar.disabled = false;
-  } else {
-    botonEnviar.disabled = true;
+//   if (entradaInputNoVacia) {
+//     botonEnviar.disabled = false;
+//   } else {
+//     botonEnviar.disabled = true;
+//   }
+// }
+
+// function botonPulsado() {
+//   console.log('has clickado el boton');
+//   console.log('botonPulsado', inputEntrada.value);
+//   limpiarInput();
+// }
+
+// function limpiarInput() {
+//   const prf = document.createElement('p');
+
+//   prf.textContent = inputEntrada.value;
+//   document.querySelector('body').appendChild(prf);
+//   inputEntrada.value = '';
+//   checarInputVacio(inputEntrada.value);
+// }
+
+// // INVOCACION DE FUNCION PARA
+// // DESHABILITAR EL BOTON DE ENVIAR Y BORRAR
+// checarInputVacio(inputEntrada.value);
+
+// // CAPTURA DEL EVENTO DE TECLADO
+// // PARA LEER EL VALOR DEL INPUT
+// function manejadorDelKeyUp(evento) {
+//   console.log(evento);
+//   console.log(evento.target.value);
+//   checarInputVacio(evento.target.value);
+// }
+
+// inputEntrada.addEventListener('keyup', manejadorDelKeyUp);
+// botonEnviar.addEventListener('click', limpiarInput);
+
+let counter = 0;
+
+for (let i = 1; i <= 10; i++) {
+  counter += i;
+}
+
+console.log(`La suma de los números del 1 al 10 es: ${counter}`);
+
+let numeros = [1, 3, 7, 5, 8, 9, 2, 6, 3, 7, 1];
+
+for (let index = 0; index < numeros.length; index++) {
+  let numero = numeros[index];
+  if (numero > 5) {
+    console.log(index);
   }
 }
 
-function botonPulsado() {
-  console.log('has clickado el boton');
-  console.log('botonPulsado', inputEntrada.value);
-  limpiarInput();
+const texto =
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur modi saepe iste architecto fugit consectetur quos facere aliquam beatae quae, cumque illo labore necessitatibus sunt voluptatem numquam dolor odit quis.';
+
+for (const palabra of texto.split(' ')) {
+  // console.log(palabra);
+  if (palabra.includes('e')) {
+    console.log(palabra);
+  }
 }
 
-function limpiarInput() {
-  const prf = document.createElement('p');
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
+};
 
-  prf.textContent = inputEntrada.value;
-  document.querySelector('body').appendChild(prf);
-  inputEntrada.value = '';
-  checarInputVacio(inputEntrada.value);
+for (let key in person) {
+  console.log(key + ': ' + person[key]);
 }
 
-// INVOCACION DE FUNCION PARA
-// DESHABILITAR EL BOTON DE ENVIAR Y BORRAR
-checarInputVacio(inputEntrada.value);
+const objeto = {
+  prop: 'valor1',
+  propiedad: 'valor2',
+  caracteristica: 'valor3',
+  algomas: 'valor4',
+  otraPropiedadMasLarga: 'valor5',
+  sol: 'valor6',
+  nombreLargoPropiedad: 'valor7'
+};
 
-// CAPTURA DEL EVENTO DE TECLADO
-// PARA LEER EL VALOR DEL INPUT
-function manejadorDelKeyUp(evento) {
-  console.log(evento);
-  console.log(evento.target.value);
-  checarInputVacio(evento.target.value);
+for (const key in objeto) {
+  console.log(key);
 }
-
-inputEntrada.addEventListener('keyup', manejadorDelKeyUp);
-botonEnviar.addEventListener('click', limpiarInput);
